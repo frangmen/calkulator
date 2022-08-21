@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../css/button.module.css'
 
-const Button = ({color, dato}) => {
+const Button = ({color, value, handleClick}) => {
     let btnColor = "";
     switch (color) {
         case "g":
@@ -17,9 +17,12 @@ const Button = ({color, dato}) => {
             break;
 
     }
+
+
+
   return (
     <div className={styles.containerBtn}>
-    <button className={`${styles.btn} ${btnColor}`}>{dato}</button>
+    <button onClick={()=> handleClick(value)} className={`${styles.btn} ${btnColor}`}>{value}</button>
     </div>
   )
 }
